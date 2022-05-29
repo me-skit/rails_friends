@@ -1,0 +1,53 @@
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3 row">
+    <%= form.label :first_name, class: "col-sm-3 col-md-2 col-form-label" %>
+    <div class="col-sm-9 col-md-10">
+      <%= form.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <%= form.label :last_name, class: "col-sm-3 col-md-2 col-form-label" %>
+    <div class="col-sm-9 col-md-10">
+      <%= form.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <%= form.label :email, class: "col-sm-3 col-md-2 col-form-label" %>
+    <div class="col-sm-9 col-md-10">
+      <%= form.text_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <%= form.label :phone, class: "col-sm-3 col-md-2 col-form-label" %>
+    <div class="col-sm-9 col-md-10">
+      <%= form.text_field :phone, class: "form-control", placeholder: "Phone Number" %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <%= form.label :twitter, class: "col-sm-3 col-md-2 col-form-label" %>
+    <div class="col-sm-9 col-md-10">
+      <%= form.text_field :twitter, class: "form-control", placeholder: "Twitter" %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <br/>
+    <%= form.submit class: "btn btn-secondary"%>
+  </div>
+<% end %>
